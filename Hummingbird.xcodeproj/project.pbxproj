@@ -17,6 +17,7 @@
 		53C4BBA71E01968A00F39D97 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */; };
 		53C4BBA81E01968A00F39D97 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4BBA41E01968A00F39D97 /* TwitterCore.framework */; };
 		53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */; };
+		53E9DC091E031E9400DCC42D /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
 		53C4BBA41E01968A00F39D97 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
 		53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		53C4BBAB1E01AD6700F39D97 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */,
 				53C4BB901E01958700F39D97 /* SignInViewController.swift */,
 				53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */,
 			);
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C4BB911E01958700F39D97 /* SignInViewController.swift in Sources */,
+				53E9DC091E031E9400DCC42D /* ListsTableViewController.swift in Sources */,
 				53C4BB8F1E01958700F39D97 /* AppDelegate.swift in Sources */,
 				53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */,
 			);

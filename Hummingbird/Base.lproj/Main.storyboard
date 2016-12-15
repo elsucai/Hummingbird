@@ -88,20 +88,52 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="z37-2O-1KX">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Lists" id="f4p-2O-a6f">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8XS-Cw-Xxf">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="All Tweets"/>
                             <connections>
-                                <action selector="listsButtonTapped:" destination="0TP-BP-x8o" id="nvV-YG-mGE"/>
+                                <action selector="titleButtonTapped:" destination="0TP-BP-x8o" eventType="touchUpInside" id="RlZ-3P-xJB"/>
+                                <segue destination="Qml-aZ-bBI" kind="show" id="N4I-Ff-bqZ"/>
                             </connections>
-                        </barButtonItem>
+                        </button>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="listsButton" destination="f4p-2O-a6f" id="dz1-iI-vwU"/>
+                        <outlet property="titleButton" destination="8XS-Cw-Xxf" id="yno-5s-Exr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgx-vA-q0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1150" y="45"/>
+        </scene>
+        <!--My Lists-->
+        <scene sceneID="8kx-la-IW5">
+            <objects>
+                <tableViewController title="My Lists" id="Qml-aZ-bBI" customClass="ListsTableViewController" customModule="Hummingbird" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KbZ-ey-fpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yhk-5k-C7Q">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yhk-5k-C7Q" id="TZA-qA-08R">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qml-aZ-bBI" id="f9b-WS-s1u"/>
+                            <outlet property="delegate" destination="Qml-aZ-bBI" id="vpY-Ap-7hG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Pf-QZ-R9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="45"/>
         </scene>
     </scenes>
     <resources>

@@ -32,12 +32,12 @@ class TimelineViewController: TWTRTimelineViewController {
     let client = TWTRAPIClient()
     var userName = ""
     
-    @IBOutlet weak var listsButton: UIBarButtonItem!
-
-    @IBAction func listsButtonTapped(_ sender: UIBarButtonItem) {
+    @IBOutlet weak var titleButton: UIButton!
+    
+    @IBAction func titleButtonTapped(_ sender: UIButton) {
         self.dataSource = TWTRListTimelineDataSource(listSlug: "companies", listOwnerScreenName: "jack", apiClient: client)
     }
-    
+
     /*
     // MARK: - Navigation
 
