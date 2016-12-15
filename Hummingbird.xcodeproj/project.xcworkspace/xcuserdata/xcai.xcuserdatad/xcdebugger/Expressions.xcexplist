@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static UserList.(getUserLists(String) -&gt; [String]).(closure #1):UserList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "array">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SignInViewController.signInTapped(UIButton) -&gt; ():SignInViewController.swift">
          <PersistentStrings>
             <PersistentString

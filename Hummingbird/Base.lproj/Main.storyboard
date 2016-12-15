@@ -70,7 +70,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1X-b1-YXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="45"/>
+            <point key="canvasLocation" x="626" y="-549"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="NGt-4w-YA6">
@@ -96,15 +96,21 @@
                                 <segue destination="Qml-aZ-bBI" kind="show" id="N4I-Ff-bqZ"/>
                             </connections>
                         </button>
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="xxv-aL-BhC">
+                            <connections>
+                                <action selector="logOutButtonTapped:" destination="0TP-BP-x8o" id="kNP-sW-3Iw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="titleButton" destination="8XS-Cw-Xxf" id="yno-5s-Exr"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showSignInController" id="J50-We-duq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgx-vA-q0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="44"/>
+            <point key="canvasLocation" x="1176" y="75"/>
         </scene>
         <!--My Lists-->
         <scene sceneID="8kx-la-IW5">
@@ -139,19 +145,20 @@
                             <outlet property="delegate" destination="Qml-aZ-bBI" id="vpY-Ap-7hG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="My Lists" id="X0s-EC-TzG"/>
                     <connections>
-                        <segue destination="0TP-BP-x8o" kind="show" identifier="backToTimelineViewController" id="g3J-PL-NTJ"/>
+                        <segue destination="0TP-BP-x8o" kind="show" identifier="backToTimelineViewController" id="z5B-QF-tqO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pf-QZ-R9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="44"/>
+            <point key="canvasLocation" x="2259" y="44"/>
         </scene>
     </scenes>
     <resources>
         <image name="hummingbird" width="2500" height="1932"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g3J-PL-NTJ"/>
+        <segue reference="z5B-QF-tqO"/>
     </inferredMetricsTieBreakers>
 </document>
