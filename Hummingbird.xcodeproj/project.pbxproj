@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		53C4BB8F1E01958700F39D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BB8E1E01958700F39D97 /* AppDelegate.swift */; };
-		53C4BB911E01958700F39D97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BB901E01958700F39D97 /* ViewController.swift */; };
+		53C4BB911E01958700F39D97 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BB901E01958700F39D97 /* SignInViewController.swift */; };
 		53C4BB941E01958700F39D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BB921E01958700F39D97 /* Main.storyboard */; };
 		53C4BB961E01958700F39D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BB951E01958700F39D97 /* Assets.xcassets */; };
 		53C4BB991E01958700F39D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BB971E01958700F39D97 /* LaunchScreen.storyboard */; };
+		53C4BBA51E01968A00F39D97 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4BBA11E01968A00F39D97 /* Fabric.framework */; };
+		53C4BBA61E01968A00F39D97 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4BBA21E01968A00F39D97 /* TwitterKit.framework */; };
+		53C4BBA71E01968A00F39D97 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */; };
+		53C4BBA81E01968A00F39D97 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4BBA41E01968A00F39D97 /* TwitterCore.framework */; };
+		53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53C4BB8B1E01958700F39D97 /* Hummingbird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hummingbird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C4BB8E1E01958700F39D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53C4BB901E01958700F39D97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53C4BB901E01958700F39D97 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		53C4BB931E01958700F39D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53C4BB951E01958700F39D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53C4BB981E01958700F39D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53C4BB9A1E01958700F39D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53C4BBA11E01968A00F39D97 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		53C4BBA21E01968A00F39D97 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		53C4BBA41E01968A00F39D97 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
+		53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C4BBA51E01968A00F39D97 /* Fabric.framework in Frameworks */,
+				53C4BBA81E01968A00F39D97 /* TwitterCore.framework in Frameworks */,
+				53C4BBA61E01968A00F39D97 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +67,27 @@
 		53C4BB8D1E01958700F39D97 /* Hummingbird */ = {
 			isa = PBXGroup;
 			children = (
+				53C4BBAB1E01AD6700F39D97 /* ViewControllers */,
 				53C4BB8E1E01958700F39D97 /* AppDelegate.swift */,
-				53C4BB901E01958700F39D97 /* ViewController.swift */,
 				53C4BB921E01958700F39D97 /* Main.storyboard */,
 				53C4BB951E01958700F39D97 /* Assets.xcassets */,
 				53C4BB971E01958700F39D97 /* LaunchScreen.storyboard */,
 				53C4BB9A1E01958700F39D97 /* Info.plist */,
+				53C4BBA11E01968A00F39D97 /* Fabric.framework */,
+				53C4BBA21E01968A00F39D97 /* TwitterKit.framework */,
+				53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */,
+				53C4BBA41E01968A00F39D97 /* TwitterCore.framework */,
 			);
 			path = Hummingbird;
+			sourceTree = "<group>";
+		};
+		53C4BBAB1E01AD6700F39D97 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53C4BB901E01958700F39D97 /* SignInViewController.swift */,
+				53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +100,7 @@
 				53C4BB871E01958700F39D97 /* Sources */,
 				53C4BB881E01958700F39D97 /* Frameworks */,
 				53C4BB891E01958700F39D97 /* Resources */,
+				53C4BBA01E01963200F39D97 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C4BBA71E01968A00F39D97 /* TwitterKitResources.bundle in Resources */,
 				53C4BB991E01958700F39D97 /* LaunchScreen.storyboard in Resources */,
 				53C4BB961E01958700F39D97 /* Assets.xcassets in Resources */,
 				53C4BB941E01958700F39D97 /* Main.storyboard in Resources */,
@@ -131,13 +159,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53C4BBA01E01963200F39D97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 19f1538c09303b328f95a19107dbf8045c2ce3bf 2845dbf4b88c262150d943f6aa91770b591eb0212e9fa6d6010fa7a6c3cc26a5";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53C4BB871E01958700F39D97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53C4BB911E01958700F39D97 /* ViewController.swift in Sources */,
+				53C4BB911E01958700F39D97 /* SignInViewController.swift in Sources */,
 				53C4BB8F1E01958700F39D97 /* AppDelegate.swift in Sources */,
+				53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +305,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Hummingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Hummingbird;
@@ -272,6 +321,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Hummingbird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Hummingbird;
@@ -299,6 +352,7 @@
 				53C4BB9F1E01958700F39D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

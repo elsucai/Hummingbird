@@ -1,26 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kXh-bg-ui4">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Hummingbird" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hummingbird" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-cR-V8t">
+                                <rect key="frame" x="10" y="68" width="300" height="184"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bxl-cR-V8t" secondAttribute="height" multiplier="83:51" id="Soa-22-6La"/>
+                                    <constraint firstAttribute="width" constant="300" id="qQe-fj-kB0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNV-HI-Otx">
+                                <rect key="frame" x="78.5" y="275" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Log In to Hummingbird">
+                                    <color key="titleColor" red="0.22169131925808452" green="0.70634534319464515" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLK-jy-CbU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bxl-cR-V8t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0sM-BR-Ayb"/>
+                            <constraint firstItem="eNV-HI-Otx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="JFB-SK-muy"/>
+                            <constraint firstItem="eNV-HI-Otx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YvF-Jg-pnb"/>
+                            <constraint firstItem="bxl-cR-V8t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="dzP-Up-7QE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="kXh-bg-ui4" kind="presentation" identifier="showTimelineViewController" id="UXC-FP-ybX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-333.75" y="43.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mrl-Xg-7g3">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" id="kXh-bg-ui4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="85d-bh-5an">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0TP-BP-x8o" kind="relationship" relationship="rootViewController" id="xDR-89-dvS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1X-b1-YXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="45"/>
+        </scene>
+        <!--Timeline View Controller-->
+        <scene sceneID="NGt-4w-YA6">
+            <objects>
+                <viewController storyboardIdentifier="TimelineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0TP-BP-x8o" customClass="TimelineViewController" customModule="Hummingbird" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y7c-wh-IdW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mnl-VK-Q1a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p54-EG-0sB" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="z37-2O-1KX">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Lists" id="f4p-2O-a6f">
+                            <connections>
+                                <action selector="listsButtonTapped:" destination="0TP-BP-x8o" id="nvV-YG-mGE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="listsButton" destination="f4p-2O-a6f" id="dz1-iI-vwU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgx-vA-q0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="45"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hummingbird" width="2500" height="1932"/>
+    </resources>
 </document>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Twitter.sharedInstance().start(withConsumerKey: "cpQw1QDKtqweStmCgiDENiV5Q", consumerSecret: "96cGFjEI0Y8Q0ZPVijIDbv9eqaFpna1DEg2FSqtXiLKAIheGE6")
+        Fabric.with([Twitter.self])
+        
+        // Check for an existing Twitter or Digits session before presenting the sign in screen.
+        if Twitter.sharedInstance().sessionStore.session() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController: AnyObject! = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
+            window?.rootViewController = signInViewController as? UIViewController
+        }
         return true
     }
 
@@ -41,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    @nonobjc func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        if Twitter.sharedInstance().application(app, open:url as URL, options: options) {
+            return true
+        }
+        
+        // If you handle other (non Twitter Kit) URLs elsewhere in your app, return true. Otherwise
+        return false
+    }
 
 }
-
