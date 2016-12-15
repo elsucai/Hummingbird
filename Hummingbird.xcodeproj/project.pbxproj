@@ -17,7 +17,8 @@
 		53C4BBA71E01968A00F39D97 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */; };
 		53C4BBA81E01968A00F39D97 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4BBA41E01968A00F39D97 /* TwitterCore.framework */; };
 		53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */; };
-		53E9DC091E031E9400DCC42D /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */; };
+		53E9DC091E031E9400DCC42D /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9DC081E031E9400DCC42D /* UserListTableViewController.swift */; };
+		53E9DC0C1E03261D00DCC42D /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9DC0B1E03261D00DCC42D /* UserList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 		53C4BBA31E01968A00F39D97 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
 		53C4BBA41E01968A00F39D97 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
 		53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
+		53E9DC081E031E9400DCC42D /* UserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		53E9DC0B1E03261D00DCC42D /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		53C4BB8D1E01958700F39D97 /* Hummingbird */ = {
 			isa = PBXGroup;
 			children = (
+				53E9DC0A1E0325ED00DCC42D /* Models */,
 				53C4BBAB1E01AD6700F39D97 /* ViewControllers */,
 				53C4BB8E1E01958700F39D97 /* AppDelegate.swift */,
 				53C4BB921E01958700F39D97 /* Main.storyboard */,
@@ -86,11 +89,19 @@
 		53C4BBAB1E01AD6700F39D97 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				53E9DC081E031E9400DCC42D /* ListsTableViewController.swift */,
+				53E9DC081E031E9400DCC42D /* UserListTableViewController.swift */,
 				53C4BB901E01958700F39D97 /* SignInViewController.swift */,
 				53C4BBB21E01DC4400F39D97 /* TimelineViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		53E9DC0A1E0325ED00DCC42D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53E9DC0B1E03261D00DCC42D /* UserList.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,8 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C4BB911E01958700F39D97 /* SignInViewController.swift in Sources */,
-				53E9DC091E031E9400DCC42D /* ListsTableViewController.swift in Sources */,
+				53E9DC091E031E9400DCC42D /* UserListTableViewController.swift in Sources */,
 				53C4BB8F1E01958700F39D97 /* AppDelegate.swift in Sources */,
+				53E9DC0C1E03261D00DCC42D /* UserList.swift in Sources */,
 				53C4BBB31E01DC4400F39D97 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
