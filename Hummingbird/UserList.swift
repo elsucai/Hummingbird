@@ -11,6 +11,6 @@ import TwitterKit
 
 class UserList {
     static func getUserLists(_ userName: String) -> [String] {
-        return ["List A", "List B"]
+        return ["All Tweets", "List A", "List B"]
     }
 }

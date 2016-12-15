@@ -26,18 +26,19 @@ class TimelineViewController: TWTRTimelineViewController {
         let store = Twitter.sharedInstance().sessionStore
         let twtrSession = store.session() as? TWTRSession
         self.userName = (twtrSession?.userName)!
-        self.dataSource = TWTRUserTimelineDataSource(screenName: self.userName, apiClient: client)
+        if listSlug.isEmpty {
+            self.dataSource = TWTRUserTimelineDataSource(screenName: self.userName, apiClient: client)
+        } else {
+            self.dataSource = TWTRListTimelineDataSource(listSlug: self.listSlug, listOwnerScreenName: "jack", apiClient: client)
+        }
     }
     
     let client = TWTRAPIClient()
     var userName = ""
+    var listSlug = ""
     
     @IBOutlet weak var titleButton: UIButton!
     
-    @IBAction func titleButtonTapped(_ sender: UIButton) {
-        self.dataSource = TWTRListTimelineDataSource(listSlug: "companies", listOwnerScreenName: "jack", apiClient: client)
-    }
-
     /*
     // MARK: - Navigation
 

@@ -29,6 +29,8 @@ class UserListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     var userLists = [String]()
+    var selectedListName = ""
+    var allTweetsSelected = false
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -51,6 +53,20 @@ class UserListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.selectedListName = userLists[indexPath.row]
+        self.allTweetsSelected = indexPath.row == 0
+        performSegue(withIdentifier: "backToTimelineViewController", sender: nil)
+    }
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToTimelineViewController" {
+            let timelineViewController = segue.destination as! TimelineViewController
+            timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
+            timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
+        }
     }
 
     /*
@@ -87,15 +103,4 @@ class UserListTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
