@@ -26,10 +26,10 @@ class UserList {
     }
     
     func getUserLists(_ userName: String, _ handle: @escaping ([ListItem]) -> Void) {
-//        let session = Twitter.sharedInstance().sessionStore.session()
-//        let userID = (session?.userID)!
+        let session = Twitter.sharedInstance().sessionStore.session()
+        let userID = (session?.userID)!
         var clientError : NSError?
-        let params = ["user_id": "36960454"]
+        let params = ["user_id": "\(userID)"]
         let request = client.urlRequest(withMethod: "GET", url: getListsEndpoint, parameters: params, error: &clientError)
         var res = [ListItem]()
         
