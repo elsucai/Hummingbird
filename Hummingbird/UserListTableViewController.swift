@@ -55,9 +55,11 @@ class UserListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedListName = userLists[indexPath.row]
         self.allTweetsSelected = indexPath.row == 0
-        let timelineViewController = self.navigationController?.popViewController(animated: true) as! TimelineViewController
+        _ = self.navigationController?.popViewController(animated: true)
+        let timelineViewController = self.navigationController?.topViewController as! TimelineViewController
         timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
         timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
+        timelineViewController.viewDidLoad()
     }
     
      // MARK: - Navigation
@@ -65,11 +67,6 @@ class UserListTableViewController: UITableViewController {
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToTimelineViewController" {
-            let timelineViewController = segue.destination as! TimelineViewController
-            timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
-            timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
-        }
     }
     */
 

@@ -6,6 +6,33 @@
          contextName = "GLOBAL">
          <PersistentStrings>
             <PersistentString
+               value = "self.allTweetsSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignInViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():SignInViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+            <PersistentString
+               value = "store.session().userID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserListTableViewController.tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ():UserListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedListName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignInViewController.signInTapped(UIButton) -&gt; ():SignInViewController.swift">
+         <PersistentStrings>
+            <PersistentString
                value = "Twitter.sharedInstance().sessionStore.session()">
             </PersistentString>
          </PersistentStrings>
@@ -19,29 +46,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SignInViewController.signInTapped(UIButton) -&gt; ():SignInViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Twitter.sharedInstance().sessionStore.session()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "TimelineViewController.viewDidLoad() -&gt; ():TimelineViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "userName">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SignInViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():SignInViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "segue.destination">
-            </PersistentString>
-            <PersistentString
-               value = "store.session().userID">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
