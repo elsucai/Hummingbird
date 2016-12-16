@@ -146,9 +146,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Lists" id="X0s-EC-TzG"/>
-                    <connections>
-                        <segue destination="0TP-BP-x8o" kind="show" identifier="backToTimelineViewController" id="z5B-QF-tqO"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pf-QZ-R9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +155,4 @@
     <resources>
         <image name="hummingbird" width="2500" height="1932"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="z5B-QF-tqO"/>
-    </inferredMetricsTieBreakers>
 </document>

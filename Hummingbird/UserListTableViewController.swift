@@ -55,19 +55,23 @@ class UserListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedListName = userLists[indexPath.row]
         self.allTweetsSelected = indexPath.row == 0
-        performSegue(withIdentifier: "backToTimelineViewController", sender: nil)
+        let timelineViewController = self.navigationController?.popViewController(animated: true) as! TimelineViewController
+        timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
+        timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
     }
     
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToTimelineViewController" {
             let timelineViewController = segue.destination as! TimelineViewController
             timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
             timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
         }
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
