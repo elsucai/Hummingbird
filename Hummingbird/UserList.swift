@@ -9,16 +9,28 @@
 import Foundation
 import TwitterKit
 
-class UserList {
-    static let client = TWTRAPIClient()
-    static let getListsEndpoint = "https://api.twitter.com/1.1/lists/list.json"
+struct ListItem {
+    let slug: String
+    let name: String
     
-    static func getUserLists(_ userName: String) -> [String] {
-        let session = Twitter.sharedInstance().sessionStore.session()
-        let userID = (session?.userID)!
+}
+
+class UserList {
+    var client: TWTRAPIClient
+    var getListsEndpoint: String
+    
+    init() {
+        client = TWTRAPIClient()
+        getListsEndpoint = "https://api.twitter.com/1.1/lists/list.json"
+    }
+    
+    func getUserLists(_ userName: String) -> [ListItem] {
+//        let session = Twitter.sharedInstance().sessionStore.session()
+//        let userID = (session?.userID)!
         var clientError : NSError?
         let params = ["user_id": "36960454"]
         let request = client.urlRequest(withMethod: "GET", url: getListsEndpoint, parameters: params, error: &clientError)
+        var res = [ListItem]()
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if connectionError != nil {
@@ -27,13 +39,25 @@ class UserList {
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                let array = json as! Array<Any>
-                print("array: \(array)")
+                if let array = json as? [Any] {
+                    for item in array {
+                        res.append(self.toListItem(item as! [String: Any]))
+                    }
+                }
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }
         }
         
-        return ["All Tweets", "List A", "List B"]
+        return res
     }
+    
+    // convert a json string to ListItem
+    func toListItem(_ json: [String: Any]) -> ListItem {
+        let slug = json["slug"] as! String
+        let name = json["name"] as! String
+        return ListItem(slug: slug, name: name)
+    }
+    
+    
 }

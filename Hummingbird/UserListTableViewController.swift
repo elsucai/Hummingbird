@@ -13,7 +13,8 @@ class UserListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userLists = UserList.getUserLists("abc")
+        let userList = UserList()
+        userLists = userList.getUserLists("abc")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,8 +29,9 @@ class UserListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    var userLists = [String]()
+    var userLists = [ListItem]()
     var selectedListName = ""
+    var selectedListSlug = ""
     var allTweetsSelected = false
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,18 +48,19 @@ class UserListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text =  userLists[indexPath.row]
+        cell.textLabel?.text =  userLists[indexPath.row].name
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedListName = userLists[indexPath.row]
+        self.selectedListName = userLists[indexPath.row].name
+        self.selectedListSlug = userLists[indexPath.row].slug
         self.allTweetsSelected = indexPath.row == 0
         _ = self.navigationController?.popViewController(animated: true)
         let timelineViewController = self.navigationController?.topViewController as! TimelineViewController
-        timelineViewController.listSlug = self.allTweetsSelected ? "" : "companies"
+        timelineViewController.listSlug = self.allTweetsSelected ? "" : self.selectedListSlug
         timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
         timelineViewController.viewDidLoad()
     }
