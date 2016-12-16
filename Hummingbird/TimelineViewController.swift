@@ -14,6 +14,9 @@ class TimelineViewController: TWTRTimelineViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        titleButton.layer.borderWidth = 1
+        titleButton.layer.cornerRadius = 6
+        titleButton.layer.borderColor = self.view.tintColor.cgColor
         prepareView()
     }
 
@@ -54,6 +57,10 @@ class TimelineViewController: TWTRTimelineViewController {
             */
             performSegue(withIdentifier: "showSignInController", sender: nil)
         }
+    }
+    
+    @IBAction func didSelectRow(_ segue: UIStoryboardSegue) {
+        self.viewDidLoad()
     }
     
     /*

@@ -16,6 +16,12 @@ class UserListTableViewController: UITableViewController {
         let userList = UserList()
         let session = Twitter.sharedInstance().sessionStore.session() as! TWTRSession
         self.userName = session.userName
+        let attrs = [
+            NSForegroundColorAttributeName: self.view.tintColor//,
+ //           NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)
+        ] as [String : Any]
+        self.navigationController?.navigationBar.titleTextAttributes = attrs
+        
         userList.getUserLists("abc", { (returnedLists: [ListItem]) -> Void in
             self.userLists = returnedLists
             self.userLists.insert(ListItem(slug: "All Tweets", name: "All Tweets", listOwnerName: self.userName), at: 0)
@@ -67,21 +73,20 @@ class UserListTableViewController: UITableViewController {
         self.selectedListSlug = userLists[indexPath.row].slug
         self.selectedListOwnerName = userLists[indexPath.row].listOwnerName
         self.allTweetsSelected = indexPath.row == 0
-        _ = self.navigationController?.popViewController(animated: true)
-        let timelineViewController = self.navigationController?.topViewController as! TimelineViewController
-        timelineViewController.listSlug = self.allTweetsSelected ? "" : self.selectedListSlug
-        timelineViewController.listOwnerName = self.allTweetsSelected ? self.userName : self.selectedListOwnerName
-        timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
-        timelineViewController.viewDidLoad()
+        performSegue(withIdentifier: "unwindToTimelineController", sender: nil)
     }
     
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToTimelineController" {
+            let timelineViewController = segue.destination as! TimelineViewController
+            timelineViewController.listSlug = self.allTweetsSelected ? "" : self.selectedListSlug
+            timelineViewController.listOwnerName = self.allTweetsSelected ? self.userName : self.selectedListOwnerName
+            timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
+        }
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
