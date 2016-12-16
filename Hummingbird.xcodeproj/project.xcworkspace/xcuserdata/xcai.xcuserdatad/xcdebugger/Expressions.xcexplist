@@ -11,13 +11,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SignInViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():SignInViewController.swift">
+         contextName = "TimelineViewController.prepareView() -&gt; ():TimelineViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "segue.destination">
+               value = "listSlug">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static UserList.(getUserLists(String) -&gt; [String]).(closure #1):UserList.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "store.session().userID">
+               value = "array">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TimelineViewController.viewDidLoad() -&gt; ():TimelineViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -38,18 +51,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static UserList.(getUserLists(String) -&gt; [String]).(closure #1):UserList.swift">
+         contextName = "UserList.toListItem([String : Any]) -&gt; ListItem:UserList.swift">
          <PersistentStrings>
             <PersistentString
-               value = "array">
+               value = "user[&quot;name&quot;] as! String">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TimelineViewController.viewDidLoad() -&gt; ():TimelineViewController.swift">
+         contextName = "SignInViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():SignInViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userName">
+               value = "segue.destination">
+            </PersistentString>
+            <PersistentString
+               value = "store.session().userID">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -29,13 +29,14 @@ class TimelineViewController: TWTRTimelineViewController {
         if listSlug.isEmpty {
             self.dataSource = TWTRUserTimelineDataSource(screenName: self.userName, apiClient: client)
         } else {
-            self.dataSource = TWTRListTimelineDataSource(listSlug: self.listSlug, listOwnerScreenName: "jack", apiClient: client)
+            self.dataSource = TWTRListTimelineDataSource(listSlug: self.listSlug, listOwnerScreenName: self.listOwnerName, apiClient: client)
         }
     }
     
     let client = TWTRAPIClient()
     var userName = ""
     var listSlug = ""
+    var listOwnerName = ""
     
     @IBOutlet weak var titleButton: UIButton!
     

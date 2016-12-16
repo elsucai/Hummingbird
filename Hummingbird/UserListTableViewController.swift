@@ -14,7 +14,13 @@ class UserListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let userList = UserList()
-        userLists = userList.getUserLists("abc")
+        let session = Twitter.sharedInstance().sessionStore.session() as! TWTRSession
+        self.userName = session.userName
+        userList.getUserLists("abc", { (returnedLists: [ListItem]) -> Void in
+            self.userLists = returnedLists
+            self.userLists.insert(ListItem(slug: "All Tweets", name: "All Tweets", listOwnerName: self.userName), at: 0)
+            self.tableView.reloadData()
+        })
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,6 +39,8 @@ class UserListTableViewController: UITableViewController {
     var selectedListName = ""
     var selectedListSlug = ""
     var allTweetsSelected = false
+    var userName = ""
+    var selectedListOwnerName = ""
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -57,10 +65,12 @@ class UserListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedListName = userLists[indexPath.row].name
         self.selectedListSlug = userLists[indexPath.row].slug
+        self.selectedListOwnerName = userLists[indexPath.row].listOwnerName
         self.allTweetsSelected = indexPath.row == 0
         _ = self.navigationController?.popViewController(animated: true)
         let timelineViewController = self.navigationController?.topViewController as! TimelineViewController
         timelineViewController.listSlug = self.allTweetsSelected ? "" : self.selectedListSlug
+        timelineViewController.listOwnerName = self.allTweetsSelected ? self.userName : self.selectedListOwnerName
         timelineViewController.titleButton.setTitle(self.selectedListName, for: .normal)
         timelineViewController.viewDidLoad()
     }

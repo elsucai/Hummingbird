@@ -12,6 +12,7 @@ import TwitterKit
 struct ListItem {
     let slug: String
     let name: String
+    let listOwnerName: String
     
 }
 
@@ -24,7 +25,7 @@ class UserList {
         getListsEndpoint = "https://api.twitter.com/1.1/lists/list.json"
     }
     
-    func getUserLists(_ userName: String) -> [ListItem] {
+    func getUserLists(_ userName: String, _ handle: @escaping ([ListItem]) -> Void) {
 //        let session = Twitter.sharedInstance().sessionStore.session()
 //        let userID = (session?.userID)!
         var clientError : NSError?
@@ -44,20 +45,19 @@ class UserList {
                         res.append(self.toListItem(item as! [String: Any]))
                     }
                 }
+                handle(res)
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }
         }
-        
-        return res
     }
     
     // convert a json string to ListItem
     func toListItem(_ json: [String: Any]) -> ListItem {
         let slug = json["slug"] as! String
         let name = json["name"] as! String
-        return ListItem(slug: slug, name: name)
+        let user = json["user"] as! [String: Any]
+        let listOwnerName = user["screen_name"] as! String
+        return ListItem(slug: slug, name: name, listOwnerName: listOwnerName)
     }
-    
-    
 }
