@@ -31,6 +31,7 @@ class TimelineViewController: TWTRTimelineViewController {
         } else {
             self.dataSource = TWTRListTimelineDataSource(listSlug: self.listSlug, listOwnerScreenName: self.listOwnerName, apiClient: client)
         }
+        self.showTweetActions = true
     }
     
     let client = TWTRAPIClient()
@@ -44,11 +45,13 @@ class TimelineViewController: TWTRTimelineViewController {
         let store = Twitter.sharedInstance().sessionStore
         if let userID = store.session()?.userID {
             store.logOutUserID(userID)
+            /*
             let cookieStorage: HTTPCookieStorage = HTTPCookieStorage.shared
             let cookies = cookieStorage.cookies //(for: URL(string: "https://api.twitter.com")!)
             for cookie in cookies! {
                 cookieStorage.deleteCookie(cookie as HTTPCookie)
             }
+            */
             performSegue(withIdentifier: "showSignInController", sender: nil)
         }
     }
